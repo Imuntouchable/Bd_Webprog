@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="src/styleofContacts.css">
+  <title>Гараж</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html">Главная</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Меню
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="Пицца.html">Пиццы</a>
+                <a class="dropdown-item" href="Бургеры.html">Бургеры</a>
+                <a class="dropdown-item" href="Напитки.html">Напитки</a>
+              </div>
+            </li>   
+            <li class="nav-item">
+              <a class="nav-link" href="Company.html">О компании</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Contacts.html">Контакты</a>
+            </li>
+          </ul>
+        </div>  
+      </nav>
+    <div class="Contacts"><p>Адрес<br>
+        ул. Морских Пехотинцев, 8, Владикавказ<br>
+        Контакты<br>
+        +7 (937) 977-17-77<br>
+        Время работы<br>
+        Открыто с 10:00 до 23:00</p></div>
+        <p class="Parners">Наши партнеры</p>
+        <div class="rec"><style type="text/css">
+          #scroller_container {
+              margin: 0 auto;
+              max-width: 100%;
+              width: 900px;
+              overflow: hidden;
+              line-height:0;
+              font-size:0;
+          }
+          #scroller_container div {
+              float: left;
+              vertical-align: baseline;
+          }
+          #scroller_container>div {
+              position: relative;
+              white-space: nowrap;
+              width: 100%;
+              padding: 22px 0;
+          }
+          #scroller_container>div a,
+          #scroller_container>div a img {
+              padding: 0;
+              margin:0;
+          }
+          #scroller_container>div a img {
+              height: 600px;
+              width: auto;
+              margin: 0 1px;
+              border: 0;
+          }
+      </style>
+      
+      <script>
+          var _scroller;
+          _scroller = function () { // scroller
+              return{
+                  speed:10, /*скорость, чем больше значние, тем медленнее движение*/
+                  direct:-1,/* -1 - движение влево, +1 - вправо*/
+                  position:0,
+                  t:null,
+                  // Инициализация скроллера
+                  init: function () {
+                      var el;
+                      // Установка обработчика колесика мыши
+                      el = document.getElementById('scroller_container');
+                      _scroller.addEvent(el, 'mousewheel', _scroller.wheel);
+                      _scroller.addEvent(el, 'DOMMouseScroll', _scroller.wheel);
+      
+                      _scroller.timer(_scroller.direct); // запускаю скроллер
+                  },
+      
+                  // Обработчик колесика мыши
+                  wheel: function (e) {
+                      _scroller.stop();
+                      e = e ? e : window.event;
+                      /*var wheelElem = e.target ? e.target : e.srcElement;*/
+                      var wheelData = e.detail ? e.detail * -1 : e.wheelDelta / 40;
+      
+                      // В движке WebKit возвращается значение в 100 раз больше
+                      if (Math.abs(wheelData) > 100) {
+                          wheelData = Math.round(wheelData / 100);
+                      }
+                      //_scroller.scroll(wheelData*10);
+                      _scroller.direct=wheelData>0?1:-1;
+                      _scroller.timer(_scroller.direct);
+                      if (window.event) {
+                          e.cancelBubble = true;
+                          e.returnValue = false;
+                          e.cancel = true;
+                      }
+                      if (e.stopPropagation && e.preventDefault) {
+                          e.stopPropagation();
+                          e.preventDefault();
+                      }
+                      return false;
+                  },
+      
+                  // Функция скроллера
+                  scroll: function (wheel) {
+                      var el = document.getElementById('scroller_container').firstElementChild;
+                      var o, oi, width;
+                      _scroller.position += wheel;
+                      if (wheel>0) {
+                          if (_scroller.position >= 0) { // берем последнюю картинку и вставляем ёё в начало
+                              // В этот момент можно подгружать более левую картинку и удалить последнюю
+                              o=el;//.firstElementChild; // контейнер с картинками
+                              oi=o.lastElementChild; // последняя картинка вместе с анкором
+                              width=oi.firstElementChild.clientWidth; // размер картинки
+                              o.insertBefore(oi,o.firstElementChild);
+                              _scroller.position-=width;
+                         }
+                      }
+                      else {
+                          o=el;//.firstElementChild; // контейнер с картинками
+                          oi=o.firstElementChild; // первая картинка вместе с анкором
+                          width=oi.firstElementChild.clientWidth; // размер картинки
+                          if(_scroller.position < -width){ // если картинка ушла влево из зоны видимости переношу её в конец списка
+                              // В этот момент можно подгружать следующую картинку и удалить первую
+                              o.appendChild(oi);
+                              _scroller.position+=width;
+                          }
+                      }
+                      el.style.left = _scroller.position + 'px';
+                  },
+      
+                  // Таймер скроллера
+                  timer: function (wheel) {
+                      _scroller.stop();
+                      _scroller.t = setInterval("_scroller.scroll(" + wheel + ");", _scroller.speed);
+                  },
+      
+                  // Остановка скроллера
+                  stop: function () {
+                      if (_scroller.t != null) {
+                          clearInterval(_scroller.t);
+                          _scroller.t = null;
+                      }
+                  },
+      
+                  // назначить обработчик события
+                  addEvent:function(el, evType, fn, useCapture) {
+                      if (el.addEventListener) {
+                          el.addEventListener(evType, fn, useCapture);
+                      }else if (el.attachEvent) {
+                          var r = el.attachEvent('on' + evType, fn);
+                      }else el['on' + evType] = fn;
+                   }
+              };
+          }();
+          window.onload=function(){setTimeout(_scroller.init,100);}; // стартуем с задержкой, чтобы все прогрузилось
+      </script>
+      
+      <div id="scroller_container" onmousemove="_scroller.stop();" onmouseout="_scroller.timer(_scroller.direct);">
+          <div>
+              <a href="#1" onclick="return!1"><img src="imgtoslider/Реклама1.jpg" alt=""></a>
+              <a href="#2" onclick="return!1"><img src="imgtoslider/Реклама2.png" alt=""></a>
+              <a href="#2" onclick="return!1"><img src="imgtoslider/Реклама3.jpg" alt=""></a>
+          </div>
+      </div>
+      <footer>
+        <table>
+          <tr>
+            <td><p class="NameFootlink">Главная</p></td>
+            <td><p class="NameFootlink">Меню</p></td>
+            <td><p class="NameFootlink">О компании</p></td>
+            <td><p class="NameFootlink">Контакты</p></td>
+            <td><p class="SocialFootlink">Наша социальная сеть</p></td>
+          </tr>
+          <tr>
+            <td><a class="Footlink" href="index.html">Главная страница</a></td>
+            <td>
+              <a class="Footlink" href="Пицца.html">Пицца</a>
+              <br>
+              <a class="Footlink" href="Бургеры.html">Бургеры</a>
+              <br>
+              <a class="Footlink" href="Напитки.html">Напитки</a>
+            </td>
+            <td><a class="Footlink" href="Company.html">Информация о компании</a></td>
+            <td><a class="Footlink" href="Contacts.html">Контакты и обратная связь</a></td>
+            <td><a class="IconFootlink" href="https://vk.com/fastfood.garage"><img src="jpg/icons8-вконтакте-48.png"></a></td>
+          </tr>
+        </table>
+      </footer>
+</body>
+</html>

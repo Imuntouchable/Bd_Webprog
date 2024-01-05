@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+  <link rel="stylesheet" href={% static "css/styleofDrinks.css" %}>
+{% endblock %}
+{% block content %}
+  <div class="Drinks">
+    <p class="Header">Напитки</p>
+    <img class="Art" src="{% static 'img/Лимонад.png' %}" height="100%" width="25%">
+    <p class="NameofDrink">Лимонад - 70р</p>
+    <img class="Art" src="{% static 'img/Чай.png' %}" height="100%" width="55%">
+    <p class="NameofDrink">Чай - 90р</p>
+    <img class="Art" src="{% static 'img/Махито.png' %}" height="100%" width="55%">
+    <p class="NameofDrink">Махито - 170р</p>
+    <img class="Art" src="{% static 'img/Сок.png' %}" height="100%" width="25%">
+    <p class="NameofDrink">Апельсиновый сок - 95р</p>
+    <img class="Art" src="{% static 'img/Пиво.png' %}" height="100%" width="55%">
+    <p class="NameofDrink">Пиво - 75р</p>
+  </div>
+{% endblock %}

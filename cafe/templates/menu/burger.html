@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+  <link rel="stylesheet" href={% static "css/styleofBurgers.css" %}>
+{% endblock %}
+{% block content %}
+  <div class="Burgers">
+    <p class="Header">Меню бургеров</p>
+    <table class="TableofBurger">
+      <tr class="Burger">
+        <td class="Colomn">
+          <img class="Art" src="{% static 'img/The-Frito-Pie-Burger.jpg' %}" height="100%" width="95%">
+          <p class="NameofBurger">Бургер "The-Frito-Pie-Burger" - 370p</p>
+        </td>
+        <td class="Colomn">
+          <p class="Structure">Говядина, Булочки из белого хлеба, Перец Холопеньо, Измельченный белый лук, Измельченный сыр Чеддер, Перец Чили</p>
+        </td>
+      </tr>
+      <tr class="Burger">
+        <td class="Colomn">
+          <img class="Art" src="{% static 'img/Eggs-Benedict-Burger.jpg' %}" height="100%" width="95%">
+          <p class="NameofBurger">Пицца "Eggs-Benedict-Burger" - 370p</p>
+        </td>
+        <td class="Colomn">
+          <p class="Structure">Говядина, Перец, Жареное Яйцо, Бекон, Булочки из белого хлеба, Лимон</p>
+        </td>
+      </tr>
+      <tr class="Burger">
+        <td class="Colomn">
+          <img class="Art" src="{% static 'img/Spaghetti-Burger.jpg' %}" height="100%" width="95%">
+          <p class="NameofBurger">Пицца "Spaghetti-Burger" - 370p</p>
+        </td>
+        <td class="Colomn">
+          <p class="Structure">Булочки из белого хлеба, Сливочное масло, Чесночная пудра или соус, Говядина, Спагетти, Соус и зелень</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+{% endblock %}

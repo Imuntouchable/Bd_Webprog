@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %} 
+  <link rel="stylesheet" href={% static "css/styleofCompany.css" %}>
+{% endblock %}
+{% block content %}
+    <p class="Companyheader">О нас</p>
+    <p class="Textcompany">Если вы привыкли двигаться в ускоренном темпе, то сама идея быстрой еды для вас не будет в новинку. Для тех, кто желает скорее перекусить в перерыве между делами, кафе быстрого питания Гараж предлагает ряд простых, но питательных блюд по умеренным ценам. Еда готовится таким образом, чтобы ее можно было взять с собой.
+                           Всех гостей ждут по адресу: Республика Северная Осетия — Алания, улица Морских Пехотинцев, 8. 
+                           Для гостей заведение работает Пн-вс: 10:00 - 23:00.
+    </p>
+    <div class="Statistic">
+      <p class="NameofStatistic">Статистика</p>
+      <img class="Statisticimg" src={% static "img/Statistic.png" %} width="100%" height="100%">
+    </div>
+    <p class="HeaderCoor">Наши Координаты</p>
+    <center>    
+      <script class="Map" type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adb0f0b29f7462e5bae0e9063f22dfc5fe228fca051e5bf361a3542e0f217ec6c&amp;width=70%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
+    </center>
+{% endblock %}

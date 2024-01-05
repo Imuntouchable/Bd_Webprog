@@ -1,0 +1,158 @@
+* 
+{
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://avatars.mds.yandex.net/get-altay/6444937/2a000001863bfd8c176ada2a8d987798a9db/L");
+  background-size: no-repeat;
+  background-position-x: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+  .Header{
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+  }
+  .Colomn{
+    border: 1px solid #ffffff;
+    vertical-align: middle;
+  }
+  .Pizza{
+    color: white;
+    text-align: center;
+  }
+  .Structure{
+    font-size: 20px;
+    text-align: center;
+
+  }
+  footer {
+    position: relative;
+    padding: 10px 20px;
+    background: #666;
+    color: white;
+    top: 43px;
+  }
+  td{
+    vertical-align: top;
+  }
+  .Footlink{
+    text-decoration: none;
+    color: white;
+  }
+  .SocialFootlink{
+    font-size: 25px;
+    margin-left: 300px;
+  }
+  .NameFootlink{
+    font-size: 25px;
+    margin-right: 80px;
+  }
+  .IconFootlink{
+    margin-left: 420px;
+  }
+  @media (max-width: 900px){
+    * 
+  {
+    margin: 0;
+    padding: 0;
+  }
+    body {
+      background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://avatars.mds.yandex.net/get-altay/6444937/2a000001863bfd8c176ada2a8d987798a9db/L");
+      background-size: no-repeat;
+      background-position-x: left;
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+  .row{
+    margin: 0px;
+  }
+  .Art{
+    height: 95%;
+    width: 95%;
+  }
+  footer {
+    position: relative;
+    padding: 10px 20px;
+    background: #666;
+    color: white;
+    top: 43px;
+  }
+  td{
+    vertical-align: top;
+  }
+  .Footlink{
+    text-decoration: none;
+    color: white;
+  }
+  .SocialFootlink{
+    font-size: 15px;
+    margin-left: 40px;
+  }
+  .NameFootlink{
+    font-size: 15px;
+    margin-right: 30px;
+  }
+  .IconFootlink{
+    margin-left: 80px;
+  }
+  }
+  @media (max-width: 600px){
+    * 
+    {
+      margin: 0;
+      padding: 0;
+    }
+      body {
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://avatars.mds.yandex.net/get-altay/6444937/2a000001863bfd8c176ada2a8d987798a9db/L");
+        background-size: no-repeat;
+        background-position-x: left;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .row{
+      margin: 0px;
+    }
+    .Art{
+      height: 95%;
+      width: 95%;
+    }
+    .textglav{
+      color: rgb(255, 255, 255);
+      font-size: 15px;
+      text-align: center;
+      margin-top: 400px;
+      margin-bottom: 300px;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    footer {
+      position: relative;
+      padding: 10px 20px;
+      background: #666;
+      color: white;
+      top: 43px;
+    }
+    td{
+      vertical-align: top;
+    }
+    .Footlink{
+      text-decoration: none;
+      color: white;
+      font-size: 10px;
+    }
+    .SocialFootlink{
+      font-size: 10px;
+      margin-left: 10px;
+    }
+    .NameFootlink{
+      font-size: 10px;
+      margin-right: 10px;
+    }
+    .IconFootlink{
+      margin-left: 20px;
+    }
+  }

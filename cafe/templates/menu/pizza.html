@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+  <link rel="stylesheet" href={% static "css/styleofPizza.css" %}>
+{% endblock %}
+{% block content %}
+<div class="Pizza">
+    <p class="Header">Меню пицц</p>
+    <table class="TableofPizza">
+      <tr class="Pizza">
+        <td class="Colomn">
+          <img class="Art" src="{% static 'img/Баварская.png' %}" height="100%" width="95%">
+          <p class="NameofPizza">Пицца "Баварская" - 370p</p>
+        </td>
+        <td class="Colomn">
+          <p class="Structure">Мясо, Субпродукты, Ветчина, Молочные продукты, Сыр, Тесто, Дрожжевое тесто, Колбаса</p>
+        </td>
+      </tr>
+      <tr class="Pizza">
+        <td class="Colomn">
+          <img class="Art" src="{% static 'img/Барбекю.png' %}" height="100%" width="95%">
+          <p class="NameofPizza">Пицца "Барбекю" - 320р</p>
+        </td>
+        <td class="Colomn">
+          <p class="Structure">Овощи, Птица, Курица, Лук, Тесто</p>
+        </td>
+      </tr>
+      <tr class="Pizza">
+        <td class="Colomn">
+          <img class="Art" src="{% static 'img/Болоньезе.png' %}" height="100%" width="95%">
+          <p class="NameofPizza">Пицца "Болоньезе" - 350р</p>
+        </td>
+        <td class="Colomn">
+          <p class="Structure">Мясо, Тесто</p>
+        </td>
+      </tr>
+      <tr class="Pizza">
+        <td class="Colomn">
+          <img class="Art" src="{% static 'img/Греческая.png' %}" height="100%" width="95%">
+          <p class="NameofPizza">Пицца "Греческая" - 340р</p>
+        </td>
+        <td class="Colomn">
+          <p class="Structure">Пшеничные лепешки, Оливковое масло, Моцарелла, Помидоры (томат), Лук репчатый, Оливки без косточки, Фета, Огурец</p>
+        </td>
+      </tr>
+      <tr class="Pizza">
+        <td class="Colomn">
+          <img class="Art" src="{% static 'img/Деревенская.png' %}">
+          <p class="NameofPizza">Пицца "Деревенская" - 335р</p>
+        </td>
+        <td class="Colomn">
+          <p class="Structure">Молочные продукты, Творог, Тесто, Мука</p>
+        </td>
+      </tr>
+      <tr class="Pizza">
+        <td class="Colomn">
+          <img class="Art" src="{% static 'img/Диабло.png' %}" height="100%" width="95%">
+          <p class="NameofPizza">Пицца "Диабло" - 390р</p>
+        </td>
+        <td class="Colomn">
+          <p class="Structure">Мясо, Субпродукты, Молочные продукты, Тесто, Колбаса</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+{% endblock %}
